@@ -1,0 +1,47 @@
+/* ===== Typography Styles ===== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: $header-line-height;
+    color: $header-text-color;
+    margin: 0 0 20px 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: normal;
+}
+
+h5,
+h6 {
+    font-weight: bold;
+}
+
+/* Headers Font Sizes */
+
+@each $screen, $headers in $header-font-sizes {
+    @include from-screen-size($screen) {
+        @each $header, $font-size in $headers {
+            #{$header} {
+                font-size: $font-size + px;
+            }
+        }
+    }
+}
+
+/* Global styles */
+
+.label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    color: $medium-gray;
+    margin-bottom: 5px;
+}

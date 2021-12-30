@@ -1,1 +1,131 @@
-<p>questions works!</p>
+<main class="container" [ngStyle]="{'pointer-events': (timer$ | async) > 0 ? 'none': null}">
+  <div class="info-container row">
+    <div class="column xs-12 lg-3">
+      <button class="hint" [disabled]="!hints[50]" (click)="disableHint('50')">50:50</button>
+      <button class="hint" [disabled]="!hints.internet" (click)="disableHint('internet')">
+        <img src="assets/images/internet.png" alt="" class="hint-icon">
+      </button>
+      <button class="hint" [disabled]="!hints.phone" (click)="disableHint('phone')">
+        <img src="assets/images/phone.png" alt="" class="hint-icon">
+      </button>
+      <button class="hint" [disabled]="!hints.heart" (click)="disableHint('heart')">
+        <img src="assets/images/heart.png" alt="" class="hint-icon">
+      </button>
+    </div>
+    <div class="column xs-12 md-6 lg-6">
+      <img src="assets/images/logo.png" alt="" class="logo">
+    </div>
+    <div class="column xs-12 md-6 lg-3 flex justify-content-end">
+      <ul class="steps">
+        <li class="step breakpoint" [ngClass]="{'done': questionNumber > 15, 'active': questionNumber === 15}">
+          <span class="step-number">15</span> 1 000 000
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 14, 'active': questionNumber === 14}">
+          <span class="step-number">14</span> 500 000
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 13, 'active': questionNumber === 13}">
+          <span class="step-number">13</span> 250 000
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 12, 'active': questionNumber === 12}">
+          <span class="step-number">12</span> 125 000
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 11, 'active': questionNumber === 11}">
+          <span class="step-number">11</span> 64 000
+        </li>
+        <li class="step breakpoint" [ngClass]="{'done': questionNumber > 10, 'active': questionNumber === 10}">
+          <span class="step-number">10</span> 32 000
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 9, 'active': questionNumber === 9}">
+          <span class="step-number">9</span> 16 000
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 8, 'active': questionNumber === 8}">
+          <span class="step-number">8</span> 8 000
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 7, 'active': questionNumber === 7}">
+          <span class="step-number">7</span> 4 000
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 6, 'active': questionNumber === 6}">
+          <span class="step-number">6</span> 2 000
+        </li>
+        <li class="step breakpoint" [ngClass]="{'done': questionNumber > 5, 'active': questionNumber === 5}">
+          <span class="step-number">5</span> 1 000
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 4, 'active': questionNumber === 4}">
+          <span class="step-number">4</span> 500
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 3, 'active': questionNumber === 3}">
+          <span class="step-number">3</span> 300
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 2, 'active': questionNumber === 2}">
+          <span class="step-number">2</span> 200
+        </li>
+        <li class="step" [ngClass]="{'done': questionNumber > 1, 'active': questionNumber === 1}">
+          <span class="step-number">1</span> 100
+        </li>
+      </ul>
+    </div>
+  </div>
+  <section class="question-container">
+    <div class="question">
+      <span>{{ currentQuestion.question }}</span>
+    </div>
+    <div class="answers">
+      <div class="answer-row">
+        <div
+          class="answer"
+          [ngClass]="{'selected': selectedAnswer === 'a', 'right': currentQuestion.rightAnswer == 'a' && isShowRightAnswer}"
+          (click)="selectAnswer('a')"
+        >
+          <ng-container *ngIf="!hiddenAnswers?.includes('a')">
+            <div class="answer-letter">A:</div>
+            {{ currentQuestion.answers.a }}
+          </ng-container>
+        </div>
+        <div
+          class="answer"
+          [ngClass]="{'selected': selectedAnswer === 'b', 'right': currentQuestion.rightAnswer == 'b' && isShowRightAnswer}"
+          (click)="selectAnswer('b')"
+        >
+          <ng-container *ngIf="!hiddenAnswers?.includes('b')">
+            <div class="answer-letter">B:</div>
+            {{ currentQuestion.answers.b }}
+          </ng-container>
+        </div>
+      </div>
+      <div class="answer-row">
+        <div
+          class="answer"
+          [ngClass]="{'selected': selectedAnswer === 'c', 'right': currentQuestion.rightAnswer == 'c' && isShowRightAnswer}"
+          (click)="selectAnswer('c')"
+        >
+          <ng-container *ngIf="!hiddenAnswers?.includes('c')">
+            <div class="answer-letter">C:</div>
+            {{ currentQuestion.answers.c }}
+          </ng-container>
+        </div>
+        <div
+          class="answer"
+          [ngClass]="{'selected': selectedAnswer === 'd', 'right': currentQuestion.rightAnswer == 'd' && isShowRightAnswer}"
+          (click)="selectAnswer('d')"
+        >
+          <ng-container *ngIf="!hiddenAnswers?.includes('d')">
+            <div class="answer-letter">D:</div>
+            {{ currentQuestion.answers.d }}
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div *ngIf="(timer$ | async) > 0" class="timer">
+    <span class="time">{{ timer$ | async }}</span>
+  </div>
+  <div *ngIf="isShowLoserModal" class="loser-modal">
+    <div class="loser-modal-overlay"></div>
+    <div class="loser-modal-content">
+      <h2>Упс!</h2>
+      <p>Вы проебали ((( <br> Но не расстраивайтесь, Новый Год - время волшебства!</p>
+      <p>Поэтому давайте сделаем вид, что ничего не было и будем играть дальше.</p>
+      <button class="loser-modal-button" (click)="nextQuestion(); hideLoserModal();">Поехали дальше</button>
+    </div>
+  </div>
+</main>

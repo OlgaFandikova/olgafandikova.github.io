@@ -1,0 +1,251 @@
+$orange: #e1a02e;
+$blue: #01163d;
+$gray: #61657b;
+$white: #ffffff;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.info-container {
+  flex-basis: calc(100vh - 250px);
+  max-height: calc(100vh - 250px);
+  width: 100%;
+  padding: 5% 0;
+  align-items: center;
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 85px;
+  margin: 0 auto 20px;
+  background-color: $blue;
+  border: 2px solid $gray;
+  border-radius: 10px;
+  font-size: 30px;
+  text-align: center;
+  transition: 0.15s;
+
+  &:hover:not([disabled]) {
+    background-color: $orange;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.hint-icon {
+  display: block;
+  width: 40px;
+}
+
+.logo {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+ul.steps {
+  list-style: none;
+  background-color: $blue;
+  border: 2px solid $gray;
+  border-radius: 10px;
+  padding: 20px 30px;
+
+  > li.step {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 0 10px 1px;
+    width: 165px;
+    color: $orange;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    &.breakpoint {
+      color: $white;
+    }
+
+    &.active {
+      background: url("../../assets/images/step-active.png") no-repeat center;
+      color: #000;
+
+      > .step-number {
+        color: $white;
+      }
+    }
+
+    &.done > .step-number::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 7px);
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      background-color: $white;
+      border-radius: 100%;
+    }
+
+    > .step-number {
+      position: relative;
+      display: inline-block;
+      width: 25px;
+      margin-right: 20px;
+      text-align: right;
+    }
+  }
+}
+
+.question-container {
+  position: relative;
+  z-index: 10;
+  flex-basis: 200px;
+  max-height: 200px;
+  width: 1024px;
+}
+
+.question {
+  padding: 15px 20%;
+  background: url("../../assets/images/quest.png") no-repeat center;
+  text-align: center;
+  display: table;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 22px;
+  min-height: 80px;
+  margin-bottom: 20px;
+  width: 100%;
+
+  > span {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.answers {
+  position: relative;
+}
+
+.answer-row {
+  display: flex;
+  background: url("../../assets/images/line.png") no-repeat center;
+  padding: 0 15%;
+  margin-bottom: 10px;
+}
+
+.answer {
+  flex-basis: 50%;
+  max-width: 50%;
+  background: url("../../assets/images/sprite-answers.webp") no-repeat 0 0;
+  background-size: 100% 310px;
+  display: flex;
+  align-items: center;
+  width: 340px;
+  padding: 0 5%;
+  font-size: 18px;
+  line-height: 22px;
+  height: 40px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover, &.selected {
+    background-position: 0 -52px;
+    color: #000;
+
+    > .answer-letter {
+      color: $white;
+    }
+  }
+
+  &.right {
+    background-position: 0 -134px;
+  }
+}
+
+.answer-letter {
+  color: $orange;
+  margin-right: 5px;
+}
+
+.timer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40vh;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .time {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.loser-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+.loser-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.loser-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  border-radius: 10px;
+  border: 2px solid $gray;
+  text-align: center;
+  color: #000;
+  padding: 30px;
+  font-size: 23px;
+}
+
+.loser-modal-button {
+  background-color: $orange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: $white;
+  margin-top: 30px;
+}

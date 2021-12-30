@@ -1,0 +1,81 @@
+/* ===== Grig ===== */
+
+$gutter: 15 !default;
+$columns: 12 !default;
+
+$screen-sizes: (
+    xs: 0,
+    sm: 557,
+    md: 768,
+    lg: 1230
+) !default;
+
+/* ===== Typography ===== */
+
+$default-font-family: "Anivers", sans-serif !default;
+$second-font-family: "Arial";
+$default-text-color: #3d474f !default;
+
+$body-font-family: $default-font-family !default;
+$body-font-size: 16 !default;
+$body-line-height: 1.6 !default;
+$body-text-color: $default-text-color !default;
+$body-background-color: #f2f5f7 !default;
+
+/* ===== Colors ===== */
+
+/* Base Colors */
+
+$white: #fff !default;
+$black: #000 !default;
+$red: #f45152 !default;
+$yellow: #fbc627 !default;
+$orange: #f5a623 !default;
+$blue: #4daeea !default;
+$light-blue: #5bd0e1 !default;
+$green: #3bcfa9 !default;
+$light-green: #7bea7d !default;
+$pink: #fe60a1 !default;
+$purple: #608cfa !default;
+
+/* Theme Colors */
+
+$primary: $purple !default;
+$secondary: $blue !default;
+$default: #92a0b7 !default;
+$info: $light-blue !default;
+$success: $green !default;
+$error: $red !default;
+$warning: $orange !default;
+
+/* Gray Colors */
+
+$light-gray: #c6cfdf !default;
+$medium-gray: #7f879c !default;
+$dark-gray: #3d474f !default;
+
+/* Colors Map */
+
+$colors: (
+    "white": $white,
+    "black": $black,
+    "red": $red,
+    "yellow": $yellow,
+    "orange": $orange,
+    "blue": $blue,
+    "light-blue": $light-blue,
+    "green": $green,
+    "light-green": $light-green,
+    "pink": $pink,
+    "purple": $purple,
+    "primary": $primary,
+    "secondary": $secondary,
+    "default": $default,
+    "info": $info,
+    "success": $success,
+    "error": $error,
+    "warning": $yellow,
+    "light-gray": $light-gray,
+    "medium-gray": $medium-gray,
+    "dark-gray": $dark-gray
+) !default;

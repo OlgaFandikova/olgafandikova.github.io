@@ -1,0 +1,25 @@
+.min-width-120 {
+    min-width: 120px !important;
+}
+
+.min-height-120 {
+    min-height: 120px;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+@each $screen in map-keys($screen-sizes) {
+    @include from-screen-size($screen) {
+        $infix: get-infix($screen);
+
+        .width#{$infix}-100 {
+            width: 100%;
+        }
+
+        .width#{$infix}-auto {
+            width: auto;
+        }
+    }
+}

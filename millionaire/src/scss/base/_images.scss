@@ -1,0 +1,13 @@
+.small-logo-image {
+    // TODO: Change logo
+    //background-image: url("../../images/small-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.star-image {
+    background-image: url("~src/images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
