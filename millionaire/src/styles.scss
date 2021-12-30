@@ -12,3 +12,32 @@ body {
   color: #fff;
   margin: 0;
 }
+
+.hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 85px;
+  margin: 0 auto 20px;
+  background-color: #01163d;
+  border: 2px solid #61657b;
+  border-radius: 10px;
+  font-size: 30px;
+  text-align: center;
+  transition: 0.15s;
+
+  &:hover:not([disabled]) {
+    background-color: $orange;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.hint-icon {
+  display: block;
+  width: 40px;
+}

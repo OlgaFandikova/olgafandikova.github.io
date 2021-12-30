@@ -1,4 +1,38 @@
-<main>
-  dfgsdfgsfg
-  <button [routerLink]="'/questions'">Погнали</button>
+<main class="main">
+  <div class="content">
+    <h1>Правила</h1>
+    <p>
+      Вам необходимо правильно ответить на 15 вопросов.
+      Каждый вопрос имеет 4 варианта ответа, из которых только один является верным.
+      Каждый вопрос имеет конкретную стоимость.
+    </p>
+    <h3>Гравный приз: 1 000 000 несуществующих денег!</h3>
+    <h3>Подсказки:</h3>
+    <ul class="list">
+      <li>
+        <button class="hint">50:50</button>
+        Компьютер убирает два неправильных ответа, предоставляя игрокам выбор из оставшихся двух вариантов ответа.
+      </li>
+      <li>
+        <button class="hint">
+          <img src="assets/images/internet.png" alt="" class="hint-icon">
+        </button>
+        В течение 60 секунд игроки могут воспользоваться интернетом.
+      </li>
+      <li>
+        <button class="hint">
+          <img src="assets/images/phone.png" alt="" class="hint-icon">
+        </button>
+        В течение 30 секунд игроки могут позвонить кому угодно.
+      </li>
+      <li>
+        <button class="hint">
+          <img src="assets/images/heart.png" alt="" class="hint-icon">
+        </button>
+        Подсказка дает право на ошибку, так сказать "вторую жизнь".
+        Если игроки неправильно отвечают на вопрос, то подсказка активируется автоматически и игра продолжается.
+      </li>
+    </ul>
+    <button [routerLink]="'/questions'" class="next-button">Погнали</button>
+  </div>
 </main>
