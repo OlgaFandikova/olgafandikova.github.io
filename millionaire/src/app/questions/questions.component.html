@@ -125,7 +125,13 @@
       <h2>Упс!</h2>
       <p>Вы проебали ((( <br> Но не расстраивайтесь, Новый Год - время волшебства!</p>
       <p>Поэтому давайте сделаем вид, что ничего не было и будем играть дальше.</p>
-      <button class="loser-modal-button" (click)="nextQuestion(); hideLoserModal();">Поехали дальше</button>
+      <button class="loser-modal-button" (click)="continueAfterFail()">Поехали дальше</button>
     </div>
+  </div>
+  <div *ngIf="isFinal" class="final-modal">
+    <h1>УРААААААА</h1>
+    <h2>Вы победили!</h2>
+    <h2>С Новым Годом</h2>
+    <img src="assets/images/confetti.png" alt="" class="confetti">
   </div>
 </main>

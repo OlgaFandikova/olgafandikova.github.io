@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of, timer } from 'rxjs';
 import { map, takeWhile } from 'rxjs/operators';
 
-import { environment } from '../../environments/environment';
+import { environment } from 'src/environments/environment';
 import { AnswerLetter, Hints, Question } from './questions.interface';
 import { QUESTIONS } from './questions.const';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-questions',
@@ -23,25 +24,55 @@ export class QuestionsComponent implements OnInit {
     phone: true,
     heart: true
   };
+  public isFinal = false;
   public hiddenAnswers = null;
   public isShowLoserModal = false;
-  public answerAcceptedAudio = new Audio('../../assets/audio/answer-accepted.mp3');
-  public answerRightAudio = new Audio('../../assets/audio/answer-right.mp3');
-  public answerWrongAudio = new Audio('../../assets/audio/answer-wrong.mp3');
-  public answerStartAudio = new Audio('../../assets/audio/answer-start.mp3');
-  public fiftyAudio = new Audio('../../assets/audio/50-50.mp3');
-  public internetAudio = new Audio('../../assets/audio/internet.mp3');
+  public answerAcceptedAudio;
+  public answerRightAudio;
+  public answerWrongAudio;
+  public answerStartAudio;
+  public fiftyAudio;
+  public internetAudio;
   public phoneAudio;
+  public finalAudio;
   public timer$: Observable<number> = of(null);
 
   public get currentQuestion(): Question {
     return this.questions[this.questionNumber - 1] || null;
   }
 
-  constructor() {
+  constructor(private router: Router) {
+    this.answerAcceptedAudio = new Audio(environment.production
+      ? 'https://www.dropbox.com/s/39purhmhco9rujv/answer-accepted.mp3?raw=1'
+      : '../../assets/audio/answer-accepted.mp3'
+    );
+    this.answerRightAudio = new Audio(environment.production
+      ? 'https://www.dropbox.com/s/kcll1c4jr5st005/answer-right.mp3?raw=1'
+      : '../../assets/audio/answer-right.mp3'
+    );
+    this.answerWrongAudio = new Audio(environment.production
+      ? 'https://www.dropbox.com/s/9mwmy79h3s2ms6u/answer-wrong.mp3?raw=1'
+      : '../../assets/audio/answer-wrong.mp3'
+    );
+    this.answerStartAudio = new Audio(environment.production
+      ? 'https://www.dropbox.com/s/g7nzx1lq9dbofsv/answer-start.mp3?raw=1'
+      : '../../assets/audio/answer-start.mp3'
+    );
+    this.fiftyAudio = new Audio(environment.production
+      ? 'https://www.dropbox.com/s/fv5zb5j7nmewvv8/50-50.mp3?raw=1'
+      : '../../assets/audio/50-50.mp3'
+    );
+    this.internetAudio = new Audio(environment.production
+      ? 'https://www.dropbox.com/s/zxz04wbvqwvo6tv/internet.mp3?raw=1'
+      : '../../assets/audio/internet.mp3'
+    );
     this.phoneAudio = new Audio(environment.production
         ? 'https://www.dropbox.com/s/m0ancfm0g8q24wd/phone.mp3?raw=1'
         : '../../assets/audio/phone.mp3'
+    );
+    this.finalAudio = new Audio(environment.production
+      ? 'https://www.dropbox.com/s/9vwp0xdto7afq6c/start.mp3?raw=1'
+      : '../../assets/audio/start.mp3'
     );
   }
 
@@ -86,19 +117,32 @@ export class QuestionsComponent implements OnInit {
     }
   }
 
-  public hideLoserModal(): void {
+  public continueAfterFail(): void {
     this.isShowLoserModal = false;
+    this.questionNumber === 15
+      ? this.setQuestion(15)
+      : this.nextQuestion();
   }
 
-  public nextQuestion(): void {
+  public setQuestion(questionNumber: number): void {
+    if (questionNumber > 15) {
+      this.isFinal = true;
+      this.playAudio(this.finalAudio);
+      return;
+    }
+
     this.selectedAnswer = null;
     this.hiddenAnswers = null;
     this.isShowRightAnswer = false;
-    this.questionNumber += 1;
+    this.questionNumber = questionNumber;
 
     this.playAudio(this.answerStartAudio);
 
     setTimeout(() => this.playQuestionAudio(), 4000);
+  }
+
+  public nextQuestion(): void {
+    this.setQuestion(this.questionNumber + 1);
   }
 
   public playQuestionAudio(): void {
