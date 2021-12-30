@@ -22,59 +22,71 @@ export const QUESTION_AUDIO = {
 };
 export const QUESTIONS: Question[] = [
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'Какое количество человек состоит в сообществе "Племя Пенсия"?',
     answers: {
-      a: '1 Lorem ipsum dolor',
-      b: '2 Lorem ipsum dolor',
-      c: '3 Lorem ipsum dolor',
-      d: '4 Lorem ipsum dolor'
+      a: '9',
+      b: '10',
+      c: '11',
+      d: '12'
     },
-    rightAnswer: 'b',
+    rightAnswer: 'c',
     audio: QUESTION_AUDIO.easy,
     waitingTime: 3000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'Как принято называть фотографию, на которой запечатлены веселые лица пенсионеров?',
     answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
+      a: 'Счастливое селфи',
+      b: 'Пенсионная карточка',
+      c: 'Радостное фото',
+      d: 'Веселая пикча'
     },
-    rightAnswer: 'b',
+    rightAnswer: 'a',
     audio: QUESTION_AUDIO.easy,
     waitingTime: 3000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'Какое место "Вингардиум Левиоса" дважды занимала на тематической мозгобойне 18+?',
     answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
+      a: '1',
+      b: '2',
+      c: '3',
+      d: 'последнее'
     },
     rightAnswer: 'b',
     audio: QUESTION_AUDIO.easy,
     waitingTime: 5000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'По сколько бат c мальчика ушло за фотесессию на Ко Лане?',
     answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
+      a: '800',
+      b: '850',
+      c: '900',
+      d: '950'
     },
-    rightAnswer: 'b',
+    rightAnswer: 'c',
     audio: QUESTION_AUDIO.easy,
     waitingTime: 5000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'Какова сумма лет всех "пенсионеров" на данный момент?',
     answers: {
-      a: 'Lorem ipsum dolor',
+      a: '314 лет',
+      b: '321 год',
+      c: '322 года',
+      d: '325 лет'
+    },
+    rightAnswer: 'a',
+    audio: QUESTION_AUDIO.middle,
+    waitingTime: 8000,
+  },
+  {
+    question: 'Какой термин не редко используется в пенсионных кругах и означает занимать место более высокое, иметь преимущество в отношении заданной позиции, господствовать?',
+    answers: {
+      a: 'Контролировать',
       b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
+      c: 'Доминировать',
       d: 'Lorem ipsum dolor'
     },
     rightAnswer: 'b',
@@ -82,62 +94,50 @@ export const QUESTIONS: Question[] = [
     waitingTime: 8000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'Как называется озеро на "Мысе Любви"?',
     answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
+      a: 'Белое',
+      b: 'Лебяжье',
+      c: 'Круглое',
+      d: 'Чертаны'
     },
     rightAnswer: 'b',
     audio: QUESTION_AUDIO.middle,
     waitingTime: 8000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'Как называется игра Alias в русской версии?',
     answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
+      a: 'Объясни слово',
+      b: 'Игра слов',
+      c: 'Молви по-другому',
+      d: 'Скажи иначе'
+    },
+    rightAnswer: 'd',
+    audio: QUESTION_AUDIO.middle,
+    waitingTime: 8000,
+  },
+  {
+    question: 'Сколько подписчиков у аккаунта "Племя Пенсия" в инстаграм?',
+    answers: {
+      a: '0 - 50',
+      b: '50 - 100',
+      c: '100 - 150',
+      d: '150 - 200'
     },
     rightAnswer: 'b',
     audio: QUESTION_AUDIO.middle,
     waitingTime: 8000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'В какие даты "Племя Пенсия" пребывало в Тайланде на новогодних праздниках 2018/19?',
     answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
+      a: 'с 30 декабря по 7 января',
+      b: 'с 30 декабря по 9 января',
+      c: 'с 31 декабря по 7 января',
+      d: 'с 31 декабря по 8 января'
     },
-    rightAnswer: 'b',
-    audio: QUESTION_AUDIO.middle,
-    waitingTime: 8000,
-  },
-  {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
-    answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
-    },
-    rightAnswer: 'b',
-    audio: QUESTION_AUDIO.middle,
-    waitingTime: 8000,
-  },
-  {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
-    answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
-    },
-    rightAnswer: 'b',
+    rightAnswer: 'd',
     audio: QUESTION_AUDIO.difficult,
     waitingTime: 10000,
   },

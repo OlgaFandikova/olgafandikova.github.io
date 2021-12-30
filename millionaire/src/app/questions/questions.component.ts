@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class QuestionsComponent implements OnInit {
   public questions: Question[] = QUESTIONS;
-  public questionNumber = 0;
+  public questionNumber = 1;
   public selectedAnswer: AnswerLetter | null = null;
   public isShowRightAnswer = false;
   public hints: Hints = {
