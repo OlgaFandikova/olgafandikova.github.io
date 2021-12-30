@@ -30,7 +30,7 @@ export class QuestionsComponent implements OnInit {
   public answerStartAudio = new Audio('../../assets/audio/answer-start.mp3');
   public fiftyAudio = new Audio('../../assets/audio/50-50.mp3');
   public internetAudio = new Audio('../../assets/audio/internet.mp3');
-  public phoneAudio = new Audio('../../assets/audio/phone.mp3');
+  public phoneAudio = new Audio('https://github.com/OlgaFandikova/olgafandikova.github.io/blob/master/millionaire/public/assets/audio/phone.mp3');
   public timer$: Observable<number> = of(null);
 
   public get currentQuestion(): Question {
