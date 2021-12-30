@@ -55,7 +55,7 @@ export class QuestionsComponent implements OnInit {
       : '../../assets/audio/answer-wrong.mp3'
     );
     this.answerStartAudio = new Audio(environment.production
-      ? 'https://www.dropbox.com/s/g7nzx1lq9dbofsv/answer-start.mp3?raw=1'
+      ? 'https://www.dropbox.com/s/ba1b8a37i22w4z3/answer-start.mp3?raw=1'
       : '../../assets/audio/answer-start.mp3'
     );
     this.fiftyAudio = new Audio(environment.production
