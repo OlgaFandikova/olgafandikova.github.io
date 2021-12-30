@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { MainComponent } from './main/main.component';
 import { AboutComponent } from './about/about.component';
+import { FinalComponent } from './final/final.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     MainComponent,
-    AboutComponent
+    AboutComponent,
+    FinalComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of, timer } from 'rxjs';
 import { map, takeWhile } from 'rxjs/operators';
 
+import { environment } from '../../environments/environment';
 import { AnswerLetter, Hints, Question } from './questions.interface';
 import { QUESTIONS } from './questions.const';
 
@@ -30,11 +31,18 @@ export class QuestionsComponent implements OnInit {
   public answerStartAudio = new Audio('../../assets/audio/answer-start.mp3');
   public fiftyAudio = new Audio('../../assets/audio/50-50.mp3');
   public internetAudio = new Audio('../../assets/audio/internet.mp3');
-  public phoneAudio = new Audio('https://github.com/OlgaFandikova/olgafandikova.github.io/blob/master/millionaire/public/assets/audio/phone.mp3');
+  public phoneAudio;
   public timer$: Observable<number> = of(null);
 
   public get currentQuestion(): Question {
     return this.questions[this.questionNumber - 1] || null;
+  }
+
+  constructor() {
+    this.phoneAudio = new Audio(environment.production
+        ? 'https://www.dropbox.com/s/m0ancfm0g8q24wd/phone.mp3?raw=1'
+        : '../../assets/audio/phone.mp3'
+    );
   }
 
   ngOnInit(): void {
@@ -109,6 +117,7 @@ export class QuestionsComponent implements OnInit {
       item.currentTime = 0;
     });
 
+    audio.crossOrigin = 'Anonymous';
     audio.play();
   }
 
