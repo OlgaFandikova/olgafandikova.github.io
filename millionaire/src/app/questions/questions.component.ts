@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class QuestionsComponent implements OnInit {
   public questions: Question[] = QUESTIONS;
-  public questionNumber = 1;
+  public questionNumber = 0;
   public selectedAnswer: AnswerLetter | null = null;
   public isShowRightAnswer = false;
   public hints: Hints = {
@@ -161,7 +161,6 @@ export class QuestionsComponent implements OnInit {
       item.currentTime = 0;
     });
 
-    audio.crossOrigin = 'Anonymous';
     audio.play();
   }
 
@@ -179,7 +178,7 @@ export class QuestionsComponent implements OnInit {
         this.playAudio(this.internetAudio);
         this.startTimer(60);
 
-        setTimeout(() => this.playQuestionAudio(), 6100);
+        setTimeout(() => this.playQuestionAudio(), 61000);
 
         break;
       }
@@ -187,7 +186,7 @@ export class QuestionsComponent implements OnInit {
         this.playAudio(this.phoneAudio);
         this.startTimer(30);
 
-        setTimeout(() => this.playQuestionAudio(), 3100);
+        setTimeout(() => this.playQuestionAudio(), 31000);
 
         break;
       }

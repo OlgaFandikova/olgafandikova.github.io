@@ -82,14 +82,14 @@ export const QUESTIONS: Question[] = [
     waitingTime: 8000,
   },
   {
-    question: 'Какой термин не редко используется в пенсионных кругах и означает занимать место более высокое, иметь преимущество в отношении заданной позиции, господствовать?',
+    question: 'Каким словом "пенсионеры" называют ситуацию, когда кто-то занимает главенствующее положение?',
     answers: {
       a: 'Контролировать',
-      b: 'Lorem ipsum dolor',
+      b: 'Господствовать',
       c: 'Доминировать',
-      d: 'Lorem ipsum dolor'
+      d: 'Педалировать'
     },
-    rightAnswer: 'b',
+    rightAnswer: 'c',
     audio: QUESTION_AUDIO.middle,
     waitingTime: 8000,
   },
@@ -142,62 +142,62 @@ export const QUESTIONS: Question[] = [
     waitingTime: 10000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'Этот напиток был изобретен как лекарственный препарат фармацевтом Джоном Пембертоном в Атланте в 1886 году. Его по сей день можно встретить на "пенсионных" тусовках. Что за напиток?',
     answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
+      a: 'Кока-кола',
+      b: 'Баллантайнс',
+      c: 'Мартини',
+      d: 'Швепс'
+    },
+    rightAnswer: 'a',
+    audio: QUESTION_AUDIO.difficult,
+    waitingTime: 10000,
+  },
+  {
+    question: 'Какое сложное слово образовано путем слияния японских слов "пустота" и "оркестр"?',
+    answers: {
+      a: 'Дискотека',
+      b: 'Караоке',
+      c: 'Микрофон',
+      d: 'Концерт'
     },
     rightAnswer: 'b',
     audio: QUESTION_AUDIO.difficult,
     waitingTime: 10000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'Какого вида пенсионного обеспечения не существует в России?',
     answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
+      a: 'Пенсия за выслугу лет',
+      b: 'Пенсия по старости',
+      c: 'Страховая пенсия',
+      d: 'Социальная пенсия'
     },
-    rightAnswer: 'b',
+    rightAnswer: 'c',
     audio: QUESTION_AUDIO.difficult,
     waitingTime: 10000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'Как согласно этикеточке называется "пенсионный" напиток, произведенный по рецепту: немножечко Вильям Лоусенс + Кока-кола 4 балла?',
     answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
-    },
-    rightAnswer: 'b',
-    audio: QUESTION_AUDIO.difficult,
-    waitingTime: 10000,
-  },
-  {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
-    answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
+      a: 'Рэзвэдэнка',
+      b: 'Развэдэнка',
+      c: 'Разведэнка',
+      d: 'Рэзведэнка'
     },
     rightAnswer: 'b',
     audio: QUESTION_AUDIO.difficult,
     waitingTime: 15000,
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga maxime non odit omnis quis quisquam quo rem sint tempore?',
+    question: 'Кто является основателем и фронтменом украинской рок-группы "Валентин Стрыкало"?',
     answers: {
-      a: 'Lorem ipsum dolor',
-      b: 'Lorem ipsum dolor',
-      c: 'Lorem ipsum dolor',
-      d: 'Lorem ipsum dolor'
+      a: 'Иван Алексеев',
+      b: 'Джаред Летов',
+      c: 'Сергей Приказчиков',
+      d: 'Юрий Каплан'
     },
-    rightAnswer: 'b',
+    rightAnswer: 'd',
     audio: QUESTION_AUDIO.veryDifficult,
     waitingTime: 15000,
   },
